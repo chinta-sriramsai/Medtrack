@@ -19,6 +19,12 @@ from email.mime.text import MIMEText
 # ---------------------------------------
 if not load_dotenv():
     print("Warning: .env file not found. Using default configurations.")
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
